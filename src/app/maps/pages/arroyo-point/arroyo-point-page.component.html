@@ -1,0 +1,41 @@
+
+<div>
+
+
+<h1>Eventos de arroyos georreferenciados</h1>
+
+
+
+<button (click)="createPointList()" id="mybotn"
+    #mybtn class="btn btn-secondary btn-lg"
+  >Consultar Tweets
+  </button>
+<div *ngIf="tweetP.length === 0; else table" class="alert alert-warning text-center">
+  No hay eventos de arroyo
+</div>
+
+<ng-template #table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Tweet</th>
+        <th>Direccion</th>
+        <th>latitud</th>
+        <th>longitud</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tw of tweetP; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{tw.tweet}} </td>
+        <td>{{tw.direccion_tweet}} </td>
+        <td>{{tw.latitud}} </td>
+        <td>{{tw.longitud}} </td>
+      </tr>
+    </tbody>
+
+  </table>
+</ng-template>
+
+</div>

@@ -1,0 +1,32 @@
+<h1>Cantidad eventos por arroyos</h1>
+
+
+
+<button (click)="createAreatList()" id="mybotn"
+    #mybtn class="btn btn-secondary btn-lg"
+  >Consultar Tweets
+  </button>
+  <div *ngIf="tweetA.length === 0; else table" class="alert alert-warning text-center">
+    No hay eventos de arroyo
+  </div>
+
+  <ng-template #table>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Arroyo</th>
+          <th>Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarr of tweetA; let i = index">
+          <td>{{i + 1}}</td>
+          <td>{{tarr.Arroyo}} </td>
+          <td>{{tarr.Cantidad}} </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </ng-template>
+

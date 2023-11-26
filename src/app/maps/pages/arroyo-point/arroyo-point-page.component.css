@@ -1,0 +1,13 @@
+h1{
+  text-align: center;
+}
+
+#mybotn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.list-group{
+  text-align:left;
+}
